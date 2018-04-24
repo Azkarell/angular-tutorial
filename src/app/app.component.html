@@ -1,17 +1,17 @@
-<div class="box">
-<mat-toolbar color="primary" class="row header"  >
+<div fxLayout="column" fxLayoutAlign="start start" fxFlex="1 1 auto" fxFlexFill>
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center"  >
    
       
     
-      <button mat-button (click)="snav.toggle()"  >
+      <button mat-button (click)="snav.toggle()" fxFlex="0 1 auto"  >
         <mat-icon>menu</mat-icon>
       </button>
-      <div class="headline p-4"> Angular </div>
+      <div class="headline p-4" fxFlex="1 0 auto"> Angular </div>
   
       
     </mat-toolbar>
 <mat-sidenav-container color="primary" [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
-      class="row content">
+      fxFlex="1 1 auto" fxFlexFill>
   
 
 
@@ -33,10 +33,10 @@
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content role="main" 
-       class="mat-elevation-z1 p-8 box row content" perfectScrollbar
-       >
+       class="mat-elevation-z1 p-8 " perfectScrollbar
+      fxLayout="column" fxLayoutAlign="start start" fxFlex="1 1 auto" fxFlexFill>
          
-        <mat-card class="row content">
+        <mat-card fxFlex="1 1 auto" fxFlexFill>
         <router-outlet></router-outlet>
       </mat-card>
       </mat-sidenav-content>
