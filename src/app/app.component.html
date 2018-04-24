@@ -1,31 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar >
-  <mat-toolbar-row>
-    <button mat-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div class="headline p-4"> AngularTest </div>
+<div class="box">
+<mat-toolbar color="primary" class="row header"  >
+   
+      
+    
+      <button mat-button (click)="snav.toggle()"  >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="headline p-4"> Angular </div>
+  
+      
+    </mat-toolbar>
+<mat-sidenav-container color="primary" [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+      class="row content">
+  
 
-  </mat-toolbar-row>
 
-</mat-toolbar>
-<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
 
-  <mat-sidenav #snav role="navigation" [mode]="mobileQuery.matches ? 'over' : 'side'"
-   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
 
-    <div class="title">
-      Tutorials
-    </div>
-      <mat-nav-list>
+    
+ 
+      <mat-sidenav   #snav role="navigation" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56" [opened]="!mobileQuery.matches" perfectScrollbar
+        >
 
-        <a mat-list-item *ngFor="let nav of links" [routerLink]="nav.path"
-         routerLinkActive #rla="routerLinkActive">
-        {{nav.data.linkText}}</a>
-      </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content role="main" fxLayout="column" fxLayoutAlign="start stretch" class="mat-elevation-z1 p-8">
+        <div class="mat-h2 p-8" >
+          Tutorials
+        </div>
+        <mat-nav-list>
 
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+          <a mat-list-item *ngFor="let nav of links" [routerLink]="nav.path" routerLinkActive #rla="routerLinkActive">
+            {{nav.data.linkText}}</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content role="main" 
+       class="mat-elevation-z1 p-8 box row content" perfectScrollbar
+       >
+         
+        <mat-card class="row content">
+        <router-outlet></router-outlet>
+      </mat-card>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+  </div>

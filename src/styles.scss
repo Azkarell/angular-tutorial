@@ -3,9 +3,37 @@
 @include mat-core();
 
 @import "app/themes/blue-grey-theme.scss";
-
 @include angular-material-theme($blue-grey-theme);
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+  
+  .box .row {
+  }
+  
+  .box .row.header {
+    flex: 0 1 auto;
+  }
+  
+  .box .row.content {
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+  
+  .box .row.footer {
+    flex: 0 1 40px;
+  }
+  
 .p-4{
     padding: 4px;
 }

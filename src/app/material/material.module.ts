@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatIconModule, MatTableModule, MatDialogModule, MatInputModule, MatTabsModule, MatLineModule, MatListModule } from '@angular/material'
+import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatIconModule, MatTableModule, MatDialogModule, MatInputModule, MatTabsModule, MatLineModule, MatListModule, MatCardModule } from '@angular/material'
 
 @NgModule({
   imports: [
@@ -13,7 +13,8 @@ import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatAutocompleteMod
     MatInputModule,
     MatTabsModule,
     MatLineModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
     
   ],
   declarations: [],
@@ -28,7 +29,8 @@ import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatAutocompleteMod
     MatInputModule,
     MatTabsModule,
     MatLineModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }
