@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef, OnDestroy, ViewEncapsulation } from '@ang
 import { MediaMatcher } from '@angular/cdk/layout';
 import {routes} from './app.routes'
 import { Routes } from '@angular/router';
+import { MatIconRegistry } from '@angular/material';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,8 +14,9 @@ export class AppComponent implements OnDestroy {
   links: Routes;
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private iconReg: MatIconRegistry) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this.iconReg.addSvgIcon("logo","assets/images/angular.svg");
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.links = routes.filter(p => p.path !== '' && p.path !== '\*\*');

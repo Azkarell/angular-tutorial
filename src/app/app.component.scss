@@ -1,0 +1,24 @@
+@import "themes/blue-grey-theme.scss";
+
+$background-palette: map-get( $blue-grey-theme,  background );
+$foreground-palette: map-get( $blue-grey-theme,  foreground );
+$logo : url("../assets/images/angular.svg");
+
+.logo {
+    width: 32px;
+    height: 32px;
+    background: $logo;
+}
+
+.sidenav {
+    background: mat-color($app-primary, default  );
+    color: white;
+    > {
+        color: white;
+    }
+    min-width: 200px;
+}
+
+.mr-24 {
+    margin-right: 24px
+}

@@ -12,7 +12,7 @@ export const routes: Routes = [
         path: 'introduction',
         loadChildren: 'app/tutorial1/tutorial1.module#Tutorial1Module',
         data: {
-            linkText: "Einführung"
+            linkText: "Übersicht"
         }
     }
 

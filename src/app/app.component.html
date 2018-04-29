@@ -1,46 +1,51 @@
 <div fxLayout="column" fxLayoutAlign="start start" fxFlex="1 1 auto" fxFlexFill>
-<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center"  >
-   
+  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="8px">
+
+
+
+    <button mat-button (click)="snav.toggle()" fxFlex="0 1 auto">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div class="headline p-4" fxFlex="1 0 auto" fxLayout="row">
+      <div class="logo" fxFlex="0 1 auto"></div> Angular </div>
+
+
+  </mat-toolbar>
+  <mat-sidenav-container color="primary" [style.marginTop.px]="mobileQuery.matches ? 56 : 0" fxFlex="1 1 auto" fxFlexFill>
+
+
+
+
+
+
+
+    <mat-sidenav #snav role="navigation" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      [opened]="!mobileQuery.matches" perfectScrollbar class="sidenav"
+      fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="4px">
       
-    
-      <button mat-button (click)="snav.toggle()" fxFlex="0 1 auto"  >
-        <mat-icon>menu</mat-icon>
-      </button>
-      <div class="headline p-4" fxFlex="1 0 auto"> Angular </div>
-  
-      
-    </mat-toolbar>
-<mat-sidenav-container color="primary" [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
-      fxFlex="1 1 auto" fxFlexFill>
-  
+      <mat-nav-list fxLayout="column" fxLayoutAlign="start center">
+          <mat-divider ></mat-divider>
+          <div class="mat-h1" fxFlex="0 1 auto">
+            Tutorials
+          </div>
+          <mat-divider ></mat-divider>
+        <div class="mx-auto" *ngFor="let nav of links">
 
-
-
-
-    
- 
-      <mat-sidenav   #snav role="navigation" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-        fixedTopGap="56" [opened]="!mobileQuery.matches" perfectScrollbar
-        >
-
-        <div class="mat-h2 p-8" >
-          Tutorials
+          <a style="color: white" mat-list-item [routerLink]="nav.path" routerLinkActive #rla="routerLinkActive">
+            <mat-icon class="mr-24">school</mat-icon> {{nav.data.linkText}}</a>
         </div>
-        <mat-nav-list>
+      </mat-nav-list>
 
-          <a mat-list-item *ngFor="let nav of links" [routerLink]="nav.path" routerLinkActive #rla="routerLinkActive">
-            {{nav.data.linkText}}</a>
-        </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content role="main" 
-       class="mat-elevation-z1 p-8 " perfectScrollbar
-      fxLayout="column" fxLayoutAlign="start start" fxFlex="1 1 auto" fxFlexFill>
-         
-        <mat-card fxFlex="1 1 auto" fxFlexFill>
+    </mat-sidenav>
+    <mat-sidenav-content role="main" class="mat-elevation-z1 p-8 " perfectScrollbar fxLayout="column" fxLayoutAlign="start start"
+      fxFlex="1 1 auto" fxFlexFill>
+
+      <mat-card fxFlex="1 1 auto" fxFlexFill>
         <router-outlet></router-outlet>
       </mat-card>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
 
-  </div>
+</div>

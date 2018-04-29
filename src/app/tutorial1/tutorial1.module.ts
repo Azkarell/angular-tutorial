@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Tutorial1Component } from './tutorial1.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './tutorial1.routes';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   imports: [
-    CommonModule,
+    MaterialModule,
     RouterModule.forChild(routes)
   ],
   declarations: [Tutorial1Component]
