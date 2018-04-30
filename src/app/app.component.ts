@@ -24,7 +24,7 @@ export class AppComponent implements OnDestroy {
     this.watcher = obsmed.subscribe(n => {
       this.mediachange = n;
     });
-    this.links = routes.filter(p => p.path !== '' && p.path !== '\*\*');
+    this.links = routes.filter(p => p.path !== '' && p.path !== '**');
   }
 
   ngOnDestroy(): void {
