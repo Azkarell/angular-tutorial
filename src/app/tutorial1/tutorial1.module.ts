@@ -4,10 +4,14 @@ import { Tutorial1Component } from './tutorial1.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './tutorial1.routes';
 import { MaterialModule } from '../material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
+    CommonModule,
     MaterialModule,
+    FlexLayoutModule,
     RouterModule.forChild(routes)
   ],
   declarations: [Tutorial1Component]

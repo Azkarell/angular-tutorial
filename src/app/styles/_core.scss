@@ -1,0 +1,6 @@
+@import "blue-grey-theme";
+@import '~@angular/material/theming';
+
+$background-palette: map-get( $blue-grey-theme,  background );
+$foreground-palette: map-get( $blue-grey-theme,  foreground );
+$logo : url("/assets/images/angular.svg");

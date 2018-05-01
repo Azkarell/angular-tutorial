@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="start start" fxFlex="1 1 auto" fxFlexFill>
+<div fxLayout="column" fxLayoutAlign="start start" fxFlexFill>
   <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="8px">
 
 
@@ -32,7 +32,6 @@
         <mat-expansion-panel class="mx-8">
           <mat-expansion-panel-header>
             <mat-panel-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px">
-              <mat-icon>school</mat-icon> 
               <p>Übersicht</p>
               
             </mat-panel-title>
@@ -40,7 +39,7 @@
           </mat-expansion-panel-header>
           <div class="mx-auto" *ngFor="let nav of links">
 
-              <a mat-list-item [routerLink]="nav.path" routerLinkActive #rla="routerLinkActive">
+              <a mat-list-item [routerLink]="'/' + nav.path" routerLinkActive #rla="routerLinkActive">
                 <mat-icon class="mr-24">school</mat-icon> {{nav.data.linkText}}</a>
             </div>
         </mat-expansion-panel>
@@ -53,11 +52,16 @@
     <mat-sidenav-content role="main" class="mat-elevation-z1 p-8 "
      perfectScrollbar fxLayout="column" fxLayoutAlign="center center"
       >
-    <div fxFlex="0 1 auto" fxFlexAlign="center">
+    <div fxFlex="0 1 auto" fxFlexAlign="center" style="width: 90%; height: 90%;">
         <router-outlet></router-outlet>
     </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-
+  <div fxFlex="0 1 0" fxFlexFill fxFlexAlign="center" class="footer">
+    <div fxLayout="row" fxLayoutAlign="center center" class="footer mat-typography">
+        <div class="mat-body" fxFlexAlign="center">Plus D Präsentation von Daniel Schröder</div>
+    </div>
+    
+  </div>
 </div>

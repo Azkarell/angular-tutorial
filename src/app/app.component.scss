@@ -1,9 +1,9 @@
-@import "themes/blue-grey-theme.scss";
+@import "styles/core";
 
-$background-palette: map-get( $blue-grey-theme,  background );
-$foreground-palette: map-get( $blue-grey-theme,  foreground );
-$logo : url("../assets/images/angular.svg");
-
+.footer {
+    background: mat-color($app-primary, default );
+    height: 32px;
+}
 .logo {
     width: 32px;
     height: 32px;

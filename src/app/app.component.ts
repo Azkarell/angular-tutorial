@@ -4,7 +4,6 @@ import {routes} from './app.routes'
 import { Routes } from '@angular/router';
 import { MatIconRegistry } from '@angular/material';
 import { ObservableMedia, MediaChange  } from "@angular/flex-layout";
-import { Subscribable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-root',
@@ -24,7 +23,7 @@ export class AppComponent implements OnDestroy {
     this.watcher = obsmed.subscribe(n => {
       this.mediachange = n;
     });
-    this.links = routes.filter(p => p.path !== '' && p.path !== '**');
+    this.links = routes.filter(route => route.path !== '' && route.path !== '**' && route.path !== 'overview');
   }
 
   ngOnDestroy(): void {

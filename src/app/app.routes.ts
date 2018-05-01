@@ -3,17 +3,27 @@ import { Routes } from "@angular/router";
 
 export const routes: Routes = [
 
+
+
     {
         path: '',
-        redirectTo: 'introduction',
+        redirectTo: 'overview',
         pathMatch: 'full'
     },
     {
-        path: 'introduction',
+        path: 'overview',
         loadChildren: 'app/tutorial1/tutorial1.module#Tutorial1Module',
         data: {
             linkText: "Übersicht"
         }
-    }
+    },
+    {
+        path: 'installation',
+        loadChildren: 'app/introduction/introduction.module#IntroductionModule',
+        data: {
+            linkText: "Installation"
+        }
+    },
+
 
 ]

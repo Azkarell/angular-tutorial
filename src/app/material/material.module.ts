@@ -12,7 +12,7 @@ import {
   MatLineModule,
   MatListModule,
   MatCardModule,
-  MatExpansionModule
+  MatExpansionModule,
 } from '@angular/material'
 
 @NgModule({
