@@ -6,12 +6,12 @@ import { routes } from './tutorial1.routes';
 import { MaterialModule } from '../material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
-    FlexLayoutModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
   declarations: [Tutorial1Component]

@@ -15,11 +15,19 @@ export const tutorialanimations = [
     ])
   ]),
   trigger('fadeIn', [
-    state('in', style({opacity: 100})),
-    transition('void => *', [
-      style({opacity: 0}),
-      animate('2s')
-    ])
+    state('hidden', style({display: 'none', opacity: '0'})),
+    state('visible', style({display: '*', opacity: '1'})),
+    transition('hidden <=> visible', [
+      animate('3s')
+    ]),
+    transition('void => hidden', [animate('20ms')])
+  ]),
+  trigger('backgroundFadeIn', [
+    state('hidden', style({backgroundColor: 'rgba(0,0,0,0)'})),
+    state('visible', style({backgroundColor: '*'})),
+    transition( 'hidden => visible', [
+      animate('3s')
+    ]),
   ])
   
 ];

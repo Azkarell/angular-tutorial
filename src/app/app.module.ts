@@ -9,6 +9,7 @@ import { HighlightModule } from "ngx-highlightjs";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 import {routes} from './app.routes'
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent  
@@ -16,9 +17,7 @@ import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
-    PerfectScrollbarModule,
+    SharedModule,
     RouterModule.forRoot(routes),
     HighlightModule.forRoot({ theme: 'atom-one-dark'})
   ],

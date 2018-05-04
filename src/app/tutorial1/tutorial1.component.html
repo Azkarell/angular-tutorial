@@ -1,11 +1,13 @@
-<mat-card @flyInOut (click)="onClick()">
-  <mat-card-title style="font-size: 64px">
-    Übersicht
-  </mat-card-title>
-  <mat-card-content class="mat-typography" style="font-size:32px" fxFlexFill>
-    <div fxLayout="row" fxLayoutAlign="start center" fxFlexFill>
-      <div fxFlex="50%">
-        <ol type="1" fxFlex="0 1 auto">
+<div fxFlexFill>
+  <mat-card [@backgroundFadeIn]="imgstate" (click)="onClick()" fxLayout="column" fxLayoutAlign="start center" perfectScrollbar>
+    <mat-card-title style="font-size: 64px" fxFlex="0 0 auto">
+      Übersicht
+    </mat-card-title>
+    <!-- <img mat-card-image [@fadeIn]="this.imgstate" src="assets/images/angular.svg"> -->
+
+    <mat-card-content class="mat-typography" style="font-size:32px" fxLayout="row" fxLayoutAlign="start start">
+      <div fxFlex="50%" fxFlexAlign="center">
+        <ol type="1">
 
           <li @flyInOut *ngFor="let it of curitems">
             <a [routerLink]="it.link">{{it.text}}</a>
@@ -14,10 +16,10 @@
 
         </ol>
       </div>
-      <div fxFlex="50%" fxFlexFill >
-        <img @fadeIn src="assets/images/angular.svg" fxFlexAlign="center" class="logo">
 
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+
+     
+    </mat-card-content>
+
+  </mat-card>
+</div>

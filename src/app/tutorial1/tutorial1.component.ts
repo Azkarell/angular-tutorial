@@ -5,14 +5,15 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-tutorial1',
+  selector: 'overview',
   templateUrl: './tutorial1.component.html',
   styleUrls: ['./tutorial1.component.scss'],
   animations: tutorialanimations
 })
 export class Tutorial1Component implements OnInit {
-  allitems = [{text:'Installation', link:'/installation'},{text:'Angular CLI', link:'/cli'},{text:'Components',link:'components'},{text:'Services', link:'services'},{text:'Routing und Navigation',link:'routing'}].reverse();
+  allitems = [{text:'Warum Angular?', link:'/angular'},{text:'Installation', link:'/installation'},{text:'Angular CLI', link:'/cli'},{text:'Components',link:'components'},{text:'Services', link:'services'},{text:'Routing und Navigation',link:'routing'}].reverse();
   curitems = [];
+  imgstate = 'hidden';
   constructor(private router: Router) { }
 
 
@@ -20,10 +21,14 @@ export class Tutorial1Component implements OnInit {
   }
 
   onClick(){
+    if(this.imgstate !== 'visible'){
+      this.imgstate = 'visible';
+      return;
+    }
     if(this.allitems.length >0){
       this.curitems.push(this.allitems.pop());
     } else {
-      this.router.navigate(['/installation']);
+      this.router.navigate([this.curitems[0].link]);
     }
   
   }

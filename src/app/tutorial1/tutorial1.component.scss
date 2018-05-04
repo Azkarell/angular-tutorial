@@ -3,13 +3,32 @@ li {
     margin: auto;
     padding: 8px;
 }
-
-.mat-card {
-    height: 90%;
+a:visited {
+    color: mat-color($app-primary, darker);
 }
-.logo {
-    width: 90%;
-    height: 90%;
-    margin: auto;
+a {
+    text-decoration: unset;
+    color: mat-color($app-primary, darker);
+}
+.mat-card {
+    height: 100%;
+    background: $logo;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 40%;
+    overflow: hidden;
+}
+.mat-card-content{
+    width: 100%;
+}
+.mat-card-title {
+    font-size: 4rem;
     
+}
+
+
+:host {
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
